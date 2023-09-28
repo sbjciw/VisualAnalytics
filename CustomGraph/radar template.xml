@@ -4,17 +4,17 @@
       <DynVars>
         <DynVar name="DYNVAR_2" description="Spoke X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_3" description="Spoke Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
-        <DynVar name="DYNVAR_7" description="Refline Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="SHARED_DYNVAR_0" description="Spoke X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="SHARED_DYNVAR_1" description="Spoke Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>        
         <DynVar name="DYNVAR_8" description="Refline X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_9" description="Refline Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_11" description="Refline X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_7" description="Refline Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_14" description="Spoke Label" required="true" assignedType="numeric" type="any" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_15" description="Data X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_16" description="Data Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_17" description="Data X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_18" description="Data Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
-        <DynVar name="SHARED_DYNVAR_0" description="Spoke X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
-        <DynVar name="SHARED_DYNVAR_1" description="Spoke Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_22" description="Data Group" required="true" assignedType="character" type="character" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_21" description="Tick Label" required="true" assignedType="numeric" type="any" multiplesAllowed="false"/>
         <DynVar name="DYNVAR_19" description="Tick X" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
