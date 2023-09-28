@@ -1,0 +1,68 @@
+<GraphTemplate>
+  <StatGraph border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="autolabel" displayOptionPolicy="union">
+    <Meta>
+      <DynVars>
+        <DynVar name="DYNVAR_2" description="Spoke X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_3" description="Spoke Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_7" description="Refline Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_8" description="Refline X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_9" description="Refline Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_11" description="Refline X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_14" description="Spoke Label" required="true" assignedType="numeric" type="any" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_15" description="Data X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_16" description="Data Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_17" description="Data X0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_18" description="Data Y0" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="SHARED_DYNVAR_0" description="Spoke X1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="SHARED_DYNVAR_1" description="Spoke Y1" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_22" description="Data Group" required="true" assignedType="character" type="character" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_21" description="Tick Label" required="true" assignedType="numeric" type="any" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_19" description="Tick X" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_20" description="Tick Y" required="true" assignedType="numeric" type="numeric" multiplesAllowed="false"/>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellHeightMin="1px" cellWidthMin="1px">
+      <LayoutPrototypeOverlay2D cycleAttrs="true" cycleColorResponses="false" wallDisplay="NONE">
+        <VectorPlot name="VectorPlot_2" tipListPolicy="replace" legendLabel="Vector Plot 3" arrowHeadShape="closed" arrowHeads="false" x="DYNVAR_15" y="DYNVAR_16" xOrigin="DYNVAR_17" yOrigin="DYNVAR_18" group="DYNVAR_22" colorModel="TwoColorRamp"/>
+        <VectorPlot name="VectorPlot_1" tipListPolicy="replace" legendLabel="Vector Plot 2" arrowHeadShape="closed" arrowHeads="false" x="DYNVAR_11" y="DYNVAR_7" xOrigin="DYNVAR_8" yOrigin="DYNVAR_9" colorModel="TwoColorRamp">
+          <LineAttrs thickness="1px"/>
+        </VectorPlot>
+        <VectorPlot name="VectorPlot_0" tipListPolicy="replace" legendLabel="Vector Plot 1" arrowHeadShape="closed" arrowHeads="false" x="SHARED_DYNVAR_0" y="SHARED_DYNVAR_1" xOrigin="DYNVAR_2" yOrigin="DYNVAR_3" colorModel="TwoColorRamp">
+          <LineAttrs thickness="1px"/>
+        </VectorPlot>
+        <ScatterPlot name="ScatterPlot_1" dataTransparency="0" tipListPolicy="replace" includeMissingGroup="true" x="DYNVAR_19" y="DYNVAR_20" dataLabel="DYNVAR_21" colorModel="TwoColorRamp">
+          <MarkerAttrs size="1px"/>
+        </ScatterPlot>
+        <ScatterPlot name="ScatterPlot_0" dataTransparency="0" tipListPolicy="replace" includeMissingGroup="true" x="SHARED_DYNVAR_0" y="SHARED_DYNVAR_1" dataLabel="DYNVAR_14" colorModel="TwoColorRamp">
+          <MarkerAttrs size="1px"/>
+        </ScatterPlot>
+        <XAxisOpts name="categoryAxis" display="NONE" gridDisplay="off">
+          <DiscreteOpts tickValueFitPolicy="staggertruncatedrop" sortOrder="data"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts display="NONE" gridDisplay="off" labelPosition="top">
+          <DiscreteOpts tickValueFitPolicy="thin" sortOrder="data"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+        <Y2AxisOpts labelPosition="top">
+          <DiscreteOpts tickValueFitPolicy="thin" sortOrder="data"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </Y2AxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="top" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>VectorPlot_2</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis maxPlotSize="60px" minPlotSize="35px" visible="off" axis="categoryAxis"/>
+  </StatGraph>
+</GraphTemplate>
