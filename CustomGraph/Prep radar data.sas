@@ -42,11 +42,10 @@ data CalData;
 /* set the intersect line length at vertices, here set to 0.05  */
 	arclen=0.05;
 
-/* calculate the position of the starting and ending points of the intersect line length at vertices */
+/* calculate the position of the starting and ending points of the short lines on each spoke */
 /* atan() function returns the angle in radians  */
-/* need to increase/decrease some angle for coordinates  */
 	do i=1 to 3 ;
-		theta=(180/constant('PI'))*atan(arclen/i);
+		theta=57.3*atan(arclen/i);
 		Refline = sqrt(arclen**2 + i**2);
 		Refline_x0=(Refline * sin((degrees-theta)/57.3)); 
 		Refline_y0=(Refline * cos((degrees-theta)/57.3)); 
@@ -55,7 +54,7 @@ data CalData;
 
 
 		if (i=3) then do;
-/* 	only shows label for the outer vertices */
+/* 	only shows label at the spoke endings  */
 			Spoke_Label = cause;
 /* adjust the length of radius in order to calculate the cocordinates for data points */
 			AdjRadius = ((countsum - &Inner) * radiusbase + (&Outer-countsum))/(&Outer-&Inner);
@@ -67,8 +66,8 @@ data CalData;
 
 		id = id + 1;
 
-/* 	display the max, min and average value for the vertices  */
-/*  they will be displayed right to the outer vertices */
+/* 	display the max, min and average value for the short lines  */
+/*  they will be displayed next to the tick marks on the first spoke */
 		if (cCount=1) then do;
 			tick_x = Refline_x1 ;
 			tick_y = Refline_y1;
