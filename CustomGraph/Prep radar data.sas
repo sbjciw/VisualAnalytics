@@ -37,7 +37,7 @@ data CalData;
 	spoke_x0 = 0; 
 	spoke_y0 = 0; 
 	spoke_x1 = (radiusbase * sin(degrees/57.3)); 
-    spoke_y1 = (radiusbase * cos(degrees/57.3)); 
+   	spoke_y1 = (radiusbase * cos(degrees/57.3)); 
 
 /* set the intersect line length at vertices, here set to 0.05  */
 	arclen=0.05;
@@ -101,7 +101,7 @@ data CalData;
 run;
 
 
-
+/* Next is to load CalData into CAS  */
 cas ;
 caslib _all_ assign;
 
