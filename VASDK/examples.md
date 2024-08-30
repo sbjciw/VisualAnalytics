@@ -102,6 +102,9 @@ class="btn_load" onclick="loadSimple()">加载报表</button>  按钮。
 1)	```reportElement.url = "http://<sas-vaserver>";    ==>   reportElement.url = "http://sas_vaserver.com";  ```
 2)	```reportElement.reportUri = "<sas-vareport uri>";   ==>   reportElement.reportUri = "/reports/reports/8a4dfa84-472b-4c68-8511-da68095820df"; ```
 
-至此，访问 http://localhost/myproj/index.html 页面，就可以看到VA报表中的图表对象。或者，访问 http://localhost/myproj/index_new.html 页面，刷新后，单击页面上的“加载报表”按钮，就可以看到该HTML页面中加载出的VA报表了，如图22.10所示。
- 
-图22.10第三方Web页面嵌入VA报表对象的示例
+至此，访问 http://localhost/myproj/index.html 页面，就可以看到VA报表中的图表对象。或者，访问 http://localhost/myproj/index_new.html 页面，刷新后，单击页面上的“加载报表”按钮，就可以看到该HTML页面中加载出的VA报表了，如下图所示。
+<p align="center">
+  <img src="../img/IndexNew.png" />
+</p>
+
+
