@@ -82,7 +82,7 @@ sas-report-padding: 1rem;"
 
 接着，为条形图设置关联选择项。具体操作方法是：在条形图的右侧边栏单击  图标，打开“操作”选项卡，并选中下面的“对所有对象执行自动操作”选项，然后从下拉列表中选择“关联选择项”，如下图所示。
 <p align="center">
-  <img src="img/databrush.png" width="50%" />
+  <img src="img/databrush.png" width="40%" />
 </p>
 
 然后，在SAS Visual Analytics中，分别在条形图与数据驱动内容这两个对象的上下文菜单中，单击“复制链接…”菜单项，从弹出页面中，选中“可嵌入Web组件”选项，就可以在该页面的文本框中看到ObjectName属性。本例中，条形图与数据驱动内容的ObjectName属性值分别为ve20和ve60。
