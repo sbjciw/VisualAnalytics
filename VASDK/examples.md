@@ -1,4 +1,4 @@
-## VASDK 示例
+## VASDK 示例 - Part1
 
 ### 1. 创建 Web 页面
 
@@ -68,7 +68,7 @@ class="btn_load" onclick="loadSimple()">加载报表</button>  按钮。
 
 在SAS Visual Analytics中，打开一个保存好的VA报表。这里，该VA报表的访问权限已设置为匿名访客可以访问。
 
-<b>1.获取 VA 报表的 HTML 元素</b>
+<b>1) 获取 VA 报表的 HTML 元素</b>
 
 可以在以下方法中二选一：
 
@@ -80,7 +80,7 @@ class="btn_load" onclick="loadSimple()">加载报表</button>  按钮。
 
   ```<sas-report hideNavigation="auto" authenticationType="guest" url="http://sas_vaserver.com" reportUri="/reports/reports/8a4dfa84-472b-4c68-8511-da68095820df"></sas-report>```
   
-<b>2.获取 VA 报表中某个图表对象的 HTML 元素</b>
+<b>2) 获取 VA 报表中某个图表对象的 HTML 元素</b>
 
 可以在SAS Visual Analytics中，打开VA报表，然后选中该图表对象后单击其工具菜单，并选择“复制链接”菜单项。然后在弹出页面的“选项”下，勾选“访客访问”和“可嵌入Web组件”，再单击“复制链接”按钮，就可以得到如下的HTML元素 <sas-report-object>。
 
@@ -106,5 +106,92 @@ class="btn_load" onclick="loadSimple()">加载报表</button>  按钮。
 <p align="center">
   <img src="img/IndexNew.png" width="70%" />
 </p>
+
+
+### 4. 将 VA 报表导出为 PDF 文档
+
+下面的代码段示例，是将一个VA报表导出为PDF文档的例子。有兴趣的读者，可以参阅作者的一篇有关使用VA SDK将VA报表导出为PDF的博文：https://blogs.sas.com/content/sgf/2021/03/25/programmatically-export-a-visual-analytics-report-to-pdf/。
+
+```
+<html>
+<head> <meta http-equiv="content-Type" content="text/html; charset=gb2312"> 
+<script async src="https://unpkg.com/@sassoftware/va-report-components@0.14.0/
+dist/umd/va-report-components.js"></script>
+</head>
+<body>
+
+<div id="buttons"> 要打印该报表，请按  <button type="button" class="btn_load" 
+id ="PrintBtn" onclick="SimplePrint()"> 打 印 </button>按钮. </div>
+<div id="myreport">
+        <sas-report authenticationType="credentials" url="https://sas-vaserver.com" 
+        reportUri="/reports/reports/72304b2a-0ffa-4fe6-bf9b-0e26e37c8f65"></sas-report>
+</div>
+<script>
+    function SimplePrint() {
+        document.addEventListener('vaReportComponents.loaded', function(){});
+        const sasReport =  new vaReportComponents.SASReportElement();
+        sasReport.authenticationType = "credentials";
+        sasReport.url =  "https://sas-vaserver.com";
+        sasReport.reportUri = "/reports/reports/72304b2a-0ffa-4fe6-bf9b-0e26e37c8f65";
+        sasReport.hideNavigation = true;
+
+        const myReport = document.body.appendChild(sasReport);
+        myReport.getReportHandle().then((reportHandle) => {
+    
+        reportHandle.exportPDF().then((pdfUrl) => {
+            // Open the PDF in a new window
+            window.open(pdfUrl, '_blank');
+        });
+    });
+}
+</script>
+</body>
+</html>
+```
+
+### 5. 导出报表对象的数据
+
+下面的代码段，是使用VA SDK将一个VA报表中的数据，导出到CSV格式文件中的例子。
+```
+<html>
+<head> <meta http-equiv="content-Type" content="text/html"> 
+<script async src="https://unpkg.com/@sassoftware/va-report-components@latest/
+dist/umd/va-report-components.js"></script>
+</head>
+ 
+<body>
+<div id="buttons"> Export Data of the VA report object by clicking the 
+<button type="button" class="btn_load" id ="ExportBtn" onclick="ExportData()">
+EXPORT Data </button> button. </div>
+<div >
+        <sas-report-object id="sasReportObject"
+            authenticationType="credentials" 
+            url="https://sas-vaserver.com" 
+            reportUri="/reports/reports/72304b2a-0ffa-4fe6-bf9b-0e26e37c8f65" objectName="ve19">
+    </sas-report-object>
+</div>
+<script>
+    function ExportData() {
+        // load the global variable of vaReportComponents
+            document.addEventListener('vaReportComponents.loaded', function(){});
+            const myReportObj = document.getElementById("sasReportObject");
+        // get the report object handle
+        myReportObj.getObjectHandle().then((objectHandle) => {
+            // set options – the columns want to export, in this example, is "numeric","character","UPCASE12"
+        const options = {
+                      columns: ["numeric","character","UPCASE12"],
+            };
+ 
+            // call the exportData function to export Data to a CSV file
+            objectHandle.exportData("CSV",options).then((DataFile) => {
+                      // Open the exported Data in a new window
+                  window.open(DataF, '_self');
+        });
+        });
+}
+</script>
+</body>
+</html>
+```
 
 
