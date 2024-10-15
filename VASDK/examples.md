@@ -1,4 +1,4 @@
-# VASDK 使用示例
+## VASDK 使用示例
 本文档提供《数据分析不求人》一书第 22 章中 VA SDK 使用的一些示例及相关说明。
 
 [1. 创建 Web 页面](https://github.com/sbjciw/VisualAnalytics/blob/master/VASDK/examples.md#1-%E5%88%9B%E5%BB%BA-web-%E9%A1%B5%E9%9D%A2)
@@ -18,13 +18,13 @@
 
 
 
-## 1. 创建 Web 页面
-## 2. 获取 SAS VA 报表的 HTML 元素
-## 3. 将 VA 报表对象嵌入Web页面
-## 4. 将 VA 报表导出为 PDF 文档
-## 5. 导出报表对象的数据
-## 6. 生成 VA 报表的自定义菜单项
-## 7. 与数据驱动内容对象的交互
+### 1. 创建 Web 页面
+### 2. 获取 SAS VA 报表的 HTML 元素
+### 3. 将 VA 报表对象嵌入Web页面
+### 4. 将 VA 报表导出为 PDF 文档
+### 5. 导出报表对象的数据
+### 6. 生成 VA 报表的自定义菜单项
+### 7. 与数据驱动内容对象的交互
 
 
 
